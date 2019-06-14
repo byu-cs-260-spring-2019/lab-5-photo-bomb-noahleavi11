@@ -1,30 +1,3 @@
-# Part 2: Navigation
-
-We will setup a navigation system using [Pure.css](https://purecss.io/).
-The `Pure.css` styles provide a simple way to create a grid, forms, buttons,
-and menus without having to load JavaScript. If you want a responsive menu
-system, see their website for a very small pure JavaScript file you can include.
-
-Start by editing `public/index.html`. Add a link to the `Pure.css`
-styles and change the title of the site:
-
-```
-  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
-  <title>Photo Share</title>
-```
-
-At the bottom of the body, add the [font awesome](https://fontawesome.com/?from=io) library:
-
-```
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/js/all.js" integrity="sha256-FfgLgtUyCun3AtxuU4iXuVNSbOzW6p1ozrdO0PlV6qA=" crossorigin="anonymous"></script>
-</body>
-```
-
-Now let's create a menu.
-
-In `src/App.vue`, modify the `template` section so it looks like this:
-
-```
 <template>
 <div id="app">
   <div class="pure-menu">
@@ -43,14 +16,7 @@ In `src/App.vue`, modify the `template` section so it looks like this:
   </div>
 </div>
 </template>
-```
 
-The menu is contained in a `ul` element, with classes from `Pure.css`. We
-use `router-link` to create the links.
-
-Now add the `style` section:
-
-```
 <style>
 /* https://color.adobe.com/Ventana-Azul-color-theme-2159606/?showPublished=true */
 #app {
@@ -197,18 +163,3 @@ body {
   transform: scale(1.1);
 }
 </style>
-```
-
-## Results
-
-Run the front end with:
-
-```
-npm run serve
-```
-
-You should see the menu for this site:
-
-![menu](/screenshots/menu.png)
-
-Go to [Part 3](/tutorials/part3.md).
