@@ -15,6 +15,11 @@
         <input v-model="password" type="password" placeholder="Password">
       </div>
 
+      <div class="pure-control-group">
+        <label for="word">Favorite Word</label>
+        <input v-model="word" type="text" placeholder="Favorite Word">
+      </div>
+
       <div class="pure-controls">
         <button type="submit" class="pure-button pure-button-primary">Submit</button>
       </div>
@@ -32,6 +37,8 @@ export default {
       email: '',
       password: '',
       error: '',
+      error2: '',
+      word: '',
     }
   },
   methods: {
@@ -39,8 +46,13 @@ export default {
       try {
         this.error = await this.$store.dispatch("register", {
           email: this.email,
-          password: this.password
+          password: this.password,
         });
+        console.log(this.word);
+        this.error2 = await this.$store.dispatch("addFavWord", {
+          email: this.email,
+          word: this.word
+        })
         if (this.error === "")
           this.$router.push('mypage');
       } catch (error) {
